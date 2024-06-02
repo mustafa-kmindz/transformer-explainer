@@ -1,0 +1,40 @@
+<script>
+	import '~/styles/app.css';
+	import '~/styles/global.scss';
+	import Topbar from '~/components/Topbar.svelte';
+
+	let topBarHeight = 0;
+</script>
+
+<svelte:head>
+	<title>Transformer Explainer</title>
+</svelte:head>
+
+<div class="app">
+	<div class="landing h-screen">
+		<header bind:offsetHeight={topBarHeight}>
+			<Topbar />
+		</header>
+		<main style={`padding-top:${topBarHeight}px`}>
+			<slot />
+		</main>
+	</div>
+	<footer></footer>
+</div>
+
+<style lang="scss">
+	.app {
+		min-width: 900px;
+	}
+
+	header {
+		min-width: 900px;
+		width: 100%;
+		position: fixed;
+		z-index: 300;
+	}
+	main {
+		position: relative;
+		height: 100%;
+	}
+</style>
