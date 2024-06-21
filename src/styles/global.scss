@@ -1,0 +1,19 @@
+svg {
+	overflow: visible;
+}
+
+[role='button'],
+button {
+	svg:focus {
+		outline: none;
+	}
+}
+
+*:focus {
+	outline: none;
+}
+
+html,
+body {
+	// font-size: 20px;
+}
